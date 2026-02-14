@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine 14/02 💖</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            transition: background 1.2s ease, background-image 1.2s ease;
+            perspective: 2000px;
+        }
+
+        .screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        .letter {
+            width: 650px;
+            max-width: 90%;
+            height: 520px;
+            background: linear-gradient(to bottom, #f5e6c8 0%, #e8cfa3 60%, #d9b57a 100%);
+            border-radius: 12px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            font-family: 'EB Garamond', serif;
+            color: #4a3422;
+            position: relative;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .letter.flipped .front {
+            transform: rotateY(-180deg);
+        }
+
+        .letter.flipped .back {
+            transform: rotateY(0deg);
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 60px 50px;
+            overflow-y: auto;
+            backface-visibility: hidden;
+            transition: transform 1s ease;
+            background: linear-gradient(to bottom, #f5e6c8 0%, #e8cfa3 60%, #d9b57a 100%);
+        }
+
+        .page.front { transform: rotateY(0deg); }
+        .page.back { transform: rotateY(180deg); }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-family: 'Great Vibes', cursive;
+            font-size: 30px;
+        }
+
+        .hint {
+            margin-top: 20px;
+            color: #6b4c4c;
+            font-weight: 500;
+            font-family: sans-serif;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -20px;
+            animation: floatUp linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-110vh) scale(1.8); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Screen 1 -->
+    <div id="screen1" class="screen">
+        <div id="outerLetter" class="letter" onclick="goToSecondScreen()" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;text-align:center;">
+            <h1>Gửi tới Công Chúa 💖</h1>
+            <p style="margin-top:20px;">
+                Một phong thư tới từ kỵ sĩ dành cho nàng...
+            </p>
+        </div>
+        <div class="hint">✨✨✨✨</div>
+    </div>
+
+    <!-- Screen 2 -->
+    <div id="screen2" class="screen hidden">
+        <div id="mainLetter" class="letter" onclick="handleLetterClick()">
+
+            <div class="page front">
+                <h1>Hà Nội, ngày 14 tháng 2 năm 2026</h1>
+                <p>
+                    Hà Nội, trong buổi sớm dịu dàng của ngày Lễ Tình Nhân,
+                    những con phố còn vương hơi sương mỏng như tấm khăn voan phủ nhẹ lên mái nhà cổ kính.
+                    Từ khung cửa sổ nhìn xuống đại lộ ngập ánh hồng của bình minh,
+                    anh chợt nhận ra trái tim mình đang đập bằng một nhịp điệu khác —
+                    nhịp điệu của mối tình đầu, dù ta chưa một lần gặp mặt.
+                    <br><br>
+                    Như một lẽ tất yếu,
+                    khi chỉ cần qua những dòng chữ và vô số lần trò chuyện,
+                    anh đã có thể nhớ người như nhớ một điều thân thuộc từ rất lâu.
+                    Giọng nói ấy — dù chỉ vang lên qua khoảng cách xa xôi —
+                    vẫn như đang thì thầm bên tai anh mỗi đêm,
+                    ấm áp và dịu dàng hơn cả ánh lửa trong lò sưởi mùa đông lạnh giá.
+                    <br><br>
+                    Người ta nói rằng tình đầu thường ngây thơ và chóng vánh,
+                    nhưng anh lại tin rằng có những mối duyên
+                    được định sẵn để lớn dần từ những điều chưa trọn vẹn.
+                    Chưa một lần nắm tay,
+                    chưa một lần đứng cạnh nhau dưới cùng bầu trời,
+                    vậy mà lòng đã biết nhớ,
+                    đã biết mong một ngày được nhìn thấy ánh mắt ấy ngoài đời thực cùng nhau.
+                    <br><br>
+                    Kể từ ngày có người,
+                    mỗi sáng thức dậy anh đều tự hỏi
+                    hôm nay người có mỉm cười không,
+                    có nhớ đến anh như anh vẫn nhớ đến người hay không.
+                    Nếu đây là sự khởi đầu của tình yêu đầu đời,
+                    anh nguyện giữ nó bằng tất cả sự chân thành của trái tim mình.
+                    <br><br>
+        
+                    Khoảng cách địa lý chưa từng ngăn được hai tâm hồn quấn quýt nhau suốt cả ngày,
+                    khi từng tin nhắn, từng tiếng cười nhỏ bé
+                    đều trở thành điều anh mong đợi nhất.
+                    <br><br>
+                    Thật sự là duyên tơ hồng đã lặng lẽ quấn chúng ta lại với nhau
+                    giữa những tháng năm tràn đầy xui rủi của năm đầy tai ương.
+                    Khi thế gian ngoài kia còn bộn bề lo toan và thử thách,
+                    anh lại tìm thấy nơi người một chốn bình yên.
+                    Vậy nên anh từng thầm nghĩ,
+                    phải chăng mình đã gom góp tất cả may mắn của cả một năm dài
+                    chỉ để đổi lấy một lần tình cờ gặp gỡ em, công chúa của anh ơi anh thật mong chờ tới ngày mà—
+                    một cuộc chạm mặt tưởng như ngẫu nhiên mà lại là điều anh hằng mong mỏi,
+                    một lần được nhìn thấy nụ cười ấy không qua màn hình,
+                    một lần được khẽ gọi tên em trong khoảng cách không còn xa nữa.
+                </p>
+                <div class="hint" style="text-align:center;">
+                   ấn típ nè >///< 
+                </div>
+            </div>
+
+            <div class="page back">
+             
+                <p>
+                    Ngày 14 tháng 2 năm 2026 này,
+                    anh không mong những bó hoa rực rỡ hay những lời thề ồn ào giữa quảng trường đông đúc.
+                    Điều anh mong chỉ là một ngày,
+                    khi chúng ta thật sự gặp nhau,
+                    anh có thể khẽ nắm lấy tay người và nói rằng:
+                    “Chào em người con gái anh ngày nhớ đêm mong.”
+                    <br><br>
+                    Tình đầu của anh không bắt đầu bằng cái chạm tay,
+                    mà bằng những đêm dài nghe giọng nói người vang vọng qua khoảng cách,
+                    bằng những phút giây chờ tin nhắn đến mà tim khẽ run lên.
+                    anh chưa từng thấy người ngoài đời,
+                    nhưng đã có thể hình dung ánh mắt ấy khi cười,
+                    đã có thể nhớ nhung như thể ta từng bên nhau tự thuở nào.
+                    <br><br>
+                    Những khi quấn lấy nhau cả ngày ấy
+                    không khiến anh mỏi mệt,
+                    trái lại còn khiến lòng anh thêm thèm muốn.
+                    Chỉ cần nghe người khẽ gọi anh ơi,
+                    anh đã có cảm giác như mình đang đứng rất gần,
+                    như thể khoảng cách chỉ là điều tạm bợ,
+                    còn yêu thương mới là điều chân thật nhất.
+                    <br><br>
+                    Có lẽ điều đẹp nhất của tình yêu
+                    là khi ta dám tin vào một tương lai chưa thành hình.
+                    Và anh — giữa thành phố Hà Nội phồn hoa đầy xô bồ này —
+                    đã thầm nguyện rằng,
+                    ngày mà người đồng ý,
+                    chúng ta sẽ nắm tay nhau không chỉ trong một mùa Valentine,
+                    mà suốt những năm tháng phía trước của cuộc đời.
+                    <br><br>
+                    Dẫu tình đầu thường khiến người ta e sợ,
+                    anh vẫn muốn can đảm chọn người.
+                    Bởi giữa muôn vàn thanh âm của thế giới,
+                    giọng nói ấy là điều duy nhất khiến anh thấy bình yên.
+                    Và nếu được phép,
+                    anh muốn để mối tình đầu này
+                    trở thành mối tình trọn đời —
+                    nơi hai ta, từ xa lạ,
+                    bước dần đến bên nhau bằng sự tin tưởng và yêu thương không đổi.
+                    <br><br>
+                    Nếu quả thật trên đời có sợi chỉ đỏ se duyên từ thuở nào,
+                    anh tin nó đã âm thầm dẫn lối để hai chúng ta gặp nhau giữa muôn vàn người xa lạ.
+                    Và dù khởi đầu chỉ là những cuộc trò chuyện qua đêm dài,
+                    anh vẫn nguyện một ngày được nắm tay em thật chặt,
+                    như thể chưa từng có tháng năm giông gió nào chia cách.
+                    Bởi sau tất cả những tai ương đã trải qua,
+                    điều quý giá nhất mà anh có được
+                    chính là em —
+                    và cơ hội để yêu em bằng tất cả chân thành.
+                </p>
+                <div class="signature">— Kỵ sĩ này mong muốn bảo vệ công chúa mãi thôi 💖</div>
+                <div class="hint" style="text-align:center;">
+                    Thư hết nhưng tình còn đầy nhớ 💖
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let heartInterval = null;
+        let letterState = 0; // 0 = front, 1 = back
+
+        function goToSecondScreen() {
+            document.getElementById("screen1").classList.add("hidden");
+            document.getElementById("screen2").classList.remove("hidden");
+
+            document.body.style.background = "none";
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1920&auto=format&fit=crop')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+
+            if (!heartInterval) {
+                heartInterval = setInterval(createHeart, 200);
+            }
+        }
+
+        function handleLetterClick() {
+            const letter = document.getElementById("mainLetter");
+
+            if (letterState === 0) {
+                letter.classList.add("flipped");
+                letterState = 1;
+            } else if (letterState === 1) {
+                letter.classList.remove("flipped");
+                letterState = 0;
+
+                document.getElementById("screen2").classList.add("hidden");
+                document.getElementById("screen1").classList.remove("hidden");
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("floating-heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+            heart.style.fontSize = (20 + Math.random() * 30) + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        // Basic tests
+        (function runTests() {
+            console.assert(typeof goToSecondScreen === 'function', 'goToSecondScreen should exist');
+            console.assert(typeof handleLetterClick === 'function', 'handleLetterClick should exist');
+            console.assert(document.querySelectorAll('.page').length === 2, 'There must be exactly 2 pages');
+            console.assert(document.getElementById('mainLetter') !== null, 'mainLetter must exist');
+            console.assert(document.getElementById('screen1') !== null && document.getElementById('screen2') !== null, 'Both screens must exist');
+        })();
+    </script>
+
+</body>
+</html>
